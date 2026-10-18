@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "types": ["vitest/globals", "node"]
+  },
+  "$comment": [
+    "`node` is here for browserBundle.test.ts alone, which reads this package's",
+    "own source off disk to prove no value import of the node-side root barrel",
+    "reaches the browser bundle. Nothing shipped imports a node builtin."
+  ],
+  "include": ["src"]
+}

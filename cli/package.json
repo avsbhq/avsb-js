@@ -1,0 +1,59 @@
+{
+  "name": "@avsbhq/cli",
+  "version": "3.9.2",
+  "description": "CLI tool for local A/B experiment development with the A vs B platform",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "ab-testing",
+    "experiments",
+    "cli",
+    "avsb"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "avsb": "bin/avsb.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avsbhq/avsb-js.git",
+    "directory": "cli"
+  },
+  "homepage": "https://github.com/avsbhq/avsb-js/tree/main/cli#readme",
+  "bugs": {
+    "url": "https://github.com/avsbhq/avsb-js/issues"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node --import tsx src/cli.ts",
+    "link": "npm link",
+    "test": "vitest run",
+    "prepublishOnly": "node build.mjs"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "chokidar": "^4.0.3",
+    "commander": "^13.1.0",
+    "esbuild": "^0.25.0",
+    "inquirer": "^12.4.2",
+    "ora": "^8.2.0",
+    "sass": "^1.80.6",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.2",
+    "@types/ws": "^8.5.14",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}

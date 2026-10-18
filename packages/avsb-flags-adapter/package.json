@@ -1,0 +1,74 @@
+{
+  "name": "@avsbhq/flags-adapter",
+  "version": "1.0.5",
+  "description": "A vs B adapter for the Flags SDK: evaluate A vs B feature flags and experiments from flag declarations, with server-side exposure tracking.",
+  "keywords": [
+    "avsb",
+    "feature-flags",
+    "ab-testing",
+    "experiments",
+    "flags-sdk",
+    "vercel",
+    "adapter",
+    "sdk"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avsbhq/avsb-js.git",
+    "directory": "packages/avsb-flags-adapter"
+  },
+  "homepage": "https://github.com/avsbhq/avsb-js/tree/main/packages/avsb-flags-adapter#readme",
+  "bugs": {
+    "url": "https://github.com/avsbhq/avsb-js/issues"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@avsbhq/core": "^1.6.0",
+    "@avsbhq/node": "^1.8.0"
+  },
+  "peerDependencies": {
+    "flags": ">=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "flags": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "flags": "3.1.1",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^4.1.4"
+  }
+}

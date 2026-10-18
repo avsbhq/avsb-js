@@ -1,0 +1,45 @@
+{
+  "name": "@avsbhq/snippet-types",
+  "version": "1.5.1",
+  "description": "TypeScript declarations for window.avsb, the A vs B web-snippet API",
+  "keywords": [
+    "avsb",
+    "ab-testing",
+    "experiments",
+    "types",
+    "typescript",
+    "snippet"
+  ],
+  "license": "MIT",
+  "sideEffects": false,
+  "types": "./avsb.d.ts",
+  "exports": {
+    ".": {
+      "types": "./avsb.d.ts"
+    },
+    "./variation-code": {
+      "types": "./variation-code.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "avsb.d.ts",
+    "variation-code.d.ts"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avsbhq/avsb-js.git",
+    "directory": "packages/avsb-snippet-types"
+  },
+  "homepage": "https://github.com/avsbhq/avsb-js/tree/main/packages/avsb-snippet-types#readme",
+  "bugs": {
+    "url": "https://github.com/avsbhq/avsb-js/issues"
+  },
+  "scripts": {
+    "sync:types": "node ../../snippet/scripts/syncSnippetTypes.mjs",
+    "check:types": "node ../../snippet/scripts/syncSnippetTypes.mjs --check"
+  }
+}

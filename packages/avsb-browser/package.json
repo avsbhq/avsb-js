@@ -1,0 +1,74 @@
+{
+  "name": "@avsbhq/browser",
+  "version": "1.6.0",
+  "description": "Browser SDK for A vs B feature flags and experiments: typed flag getters, a cached datafile, persistent visitor identity, and event tracking.",
+  "keywords": [
+    "avsb",
+    "feature-flags",
+    "ab-testing",
+    "experiments",
+    "browser",
+    "sdk"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./server": {
+      "import": {
+        "types": "./dist/server.d.ts",
+        "default": "./dist/server.js"
+      },
+      "require": {
+        "types": "./dist/server.d.cts",
+        "default": "./dist/server.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avsbhq/avsb-js.git",
+    "directory": "packages/avsb-browser"
+  },
+  "homepage": "https://github.com/avsbhq/avsb-js/tree/main/packages/avsb-browser#readme",
+  "bugs": {
+    "url": "https://github.com/avsbhq/avsb-js/issues"
+  },
+  "scripts": {
+    "prebuild": "node ../avsb-core/scripts/writeSdkVersion.mjs",
+    "build": "tsup",
+    "dev": "tsup --watch"
+  },
+  "dependencies": {
+    "@avsbhq/core": "^1.7.0",
+    "@avsbhq/utils": "^1.2.1"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.3.2",
+    "@types/react": "^19.2.14",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0"
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "name": "@avsbhq/edge",
+  "version": "1.3.0",
+  "description": "Edge SDK for A vs B feature flags and experiments, with adapters for Cloudflare Workers, Vercel, Fastly, Netlify, Deno, Bun, and Lambda@Edge.",
+  "keywords": [
+    "avsb",
+    "feature-flags",
+    "ab-testing",
+    "experiments",
+    "edge",
+    "cloudflare-workers",
+    "vercel",
+    "sdk"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./cloudflare": {
+      "import": {
+        "types": "./dist/adapters/cloudflare.d.ts",
+        "default": "./dist/adapters/cloudflare.js"
+      },
+      "require": {
+        "types": "./dist/adapters/cloudflare.d.cts",
+        "default": "./dist/adapters/cloudflare.cjs"
+      }
+    },
+    "./vercel": {
+      "import": {
+        "types": "./dist/adapters/vercel.d.ts",
+        "default": "./dist/adapters/vercel.js"
+      },
+      "require": {
+        "types": "./dist/adapters/vercel.d.cts",
+        "default": "./dist/adapters/vercel.cjs"
+      }
+    },
+    "./fastly": {
+      "import": {
+        "types": "./dist/adapters/fastly.d.ts",
+        "default": "./dist/adapters/fastly.js"
+      },
+      "require": {
+        "types": "./dist/adapters/fastly.d.cts",
+        "default": "./dist/adapters/fastly.cjs"
+      }
+    },
+    "./netlify": {
+      "import": {
+        "types": "./dist/adapters/netlify.d.ts",
+        "default": "./dist/adapters/netlify.js"
+      },
+      "require": {
+        "types": "./dist/adapters/netlify.d.cts",
+        "default": "./dist/adapters/netlify.cjs"
+      }
+    },
+    "./deno": {
+      "import": {
+        "types": "./dist/adapters/deno.d.ts",
+        "default": "./dist/adapters/deno.js"
+      },
+      "require": {
+        "types": "./dist/adapters/deno.d.cts",
+        "default": "./dist/adapters/deno.cjs"
+      }
+    },
+    "./bun": {
+      "import": {
+        "types": "./dist/adapters/bun.d.ts",
+        "default": "./dist/adapters/bun.js"
+      },
+      "require": {
+        "types": "./dist/adapters/bun.d.cts",
+        "default": "./dist/adapters/bun.cjs"
+      }
+    },
+    "./lambda": {
+      "import": {
+        "types": "./dist/adapters/lambdaEdge.d.ts",
+        "default": "./dist/adapters/lambdaEdge.js"
+      },
+      "require": {
+        "types": "./dist/adapters/lambdaEdge.d.cts",
+        "default": "./dist/adapters/lambdaEdge.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avsbhq/avsb-js.git",
+    "directory": "packages/avsb-edge"
+  },
+  "homepage": "https://github.com/avsbhq/avsb-js/tree/main/packages/avsb-edge#readme",
+  "bugs": {
+    "url": "https://github.com/avsbhq/avsb-js/issues"
+  },
+  "scripts": {
+    "prebuild": "node ../avsb-core/scripts/writeSdkVersion.mjs",
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@avsbhq/core": "^1.7.0",
+    "@avsbhq/utils": "^1.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^4.1.4"
+  }
+}

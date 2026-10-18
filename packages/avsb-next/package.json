@@ -1,0 +1,104 @@
+{
+  "name": "@avsbhq/next",
+  "version": "1.1.3",
+  "description": "Next.js SDK for A vs B feature flags and experiments: server evaluation, safe hydration, middleware, and a one-line App Router root component.",
+  "keywords": [
+    "avsb",
+    "feature-flags",
+    "ab-testing",
+    "experiments",
+    "next",
+    "nextjs",
+    "react",
+    "sdk"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./server": {
+      "import": {
+        "types": "./dist/server.d.ts",
+        "default": "./dist/server.js"
+      },
+      "require": {
+        "types": "./dist/server.d.cts",
+        "default": "./dist/server.cjs"
+      }
+    },
+    "./middleware": {
+      "import": {
+        "types": "./dist/middleware.d.ts",
+        "default": "./dist/middleware.js"
+      },
+      "require": {
+        "types": "./dist/middleware.d.cts",
+        "default": "./dist/middleware.cjs"
+      }
+    },
+    "./pages": {
+      "import": {
+        "types": "./dist/pages/getServerSideProps.d.ts",
+        "default": "./dist/pages/getServerSideProps.js"
+      },
+      "require": {
+        "types": "./dist/pages/getServerSideProps.d.cts",
+        "default": "./dist/pages/getServerSideProps.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avsbhq/avsb-js.git",
+    "directory": "packages/avsb-next"
+  },
+  "homepage": "https://github.com/avsbhq/avsb-js/tree/main/packages/avsb-next#readme",
+  "bugs": {
+    "url": "https://github.com/avsbhq/avsb-js/issues"
+  },
+  "scripts": {
+    "prebuild": "node ../avsb-core/scripts/writeSdkVersion.mjs",
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "peerDependencies": {
+    "next": ">=15.0.0",
+    "react": ">=18.0.0"
+  },
+  "dependencies": {
+    "@avsbhq/browser": "^1.5.0",
+    "@avsbhq/core": "^1.6.0",
+    "@avsbhq/react": "^1.1.2",
+    "@avsbhq/utils": "^1.2.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "next": "^16.2.1",
+    "react": "^19.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^4.1.4"
+  }
+}

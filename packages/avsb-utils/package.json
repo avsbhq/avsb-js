@@ -1,0 +1,252 @@
+{
+  "name": "@avsbhq/utils",
+  "version": "1.2.2",
+  "description": "Shared helpers for the A vs B SDKs: framework middleware, logger bindings, OpenFeature providers, streaming, SDK key checks, and the one shared retry curve.",
+  "keywords": [
+    "avsb",
+    "feature-flags",
+    "ab-testing",
+    "experiments",
+    "middleware",
+    "openfeature",
+    "sdk"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./openfeature": {
+      "import": {
+        "types": "./dist/openfeature.d.ts",
+        "default": "./dist/openfeature.js"
+      },
+      "require": {
+        "types": "./dist/openfeature.d.cts",
+        "default": "./dist/openfeature.cjs"
+      }
+    },
+    "./log/pino": {
+      "import": {
+        "types": "./dist/log/pino.d.ts",
+        "default": "./dist/log/pino.js"
+      },
+      "require": {
+        "types": "./dist/log/pino.d.cts",
+        "default": "./dist/log/pino.cjs"
+      }
+    },
+    "./log/winston": {
+      "import": {
+        "types": "./dist/log/winston.d.ts",
+        "default": "./dist/log/winston.js"
+      },
+      "require": {
+        "types": "./dist/log/winston.d.cts",
+        "default": "./dist/log/winston.cjs"
+      }
+    },
+    "./log/console": {
+      "import": {
+        "types": "./dist/log/console.d.ts",
+        "default": "./dist/log/console.js"
+      },
+      "require": {
+        "types": "./dist/log/console.d.cts",
+        "default": "./dist/log/console.cjs"
+      }
+    },
+    "./middleware/express": {
+      "import": {
+        "types": "./dist/middleware/express.d.ts",
+        "default": "./dist/middleware/express.js"
+      },
+      "require": {
+        "types": "./dist/middleware/express.d.cts",
+        "default": "./dist/middleware/express.cjs"
+      }
+    },
+    "./middleware/fastify": {
+      "import": {
+        "types": "./dist/middleware/fastify.d.ts",
+        "default": "./dist/middleware/fastify.js"
+      },
+      "require": {
+        "types": "./dist/middleware/fastify.d.cts",
+        "default": "./dist/middleware/fastify.cjs"
+      }
+    },
+    "./middleware/hono": {
+      "import": {
+        "types": "./dist/middleware/hono.d.ts",
+        "default": "./dist/middleware/hono.js"
+      },
+      "require": {
+        "types": "./dist/middleware/hono.d.cts",
+        "default": "./dist/middleware/hono.cjs"
+      }
+    },
+    "./middleware/koa": {
+      "import": {
+        "types": "./dist/middleware/koa.d.ts",
+        "default": "./dist/middleware/koa.js"
+      },
+      "require": {
+        "types": "./dist/middleware/koa.d.cts",
+        "default": "./dist/middleware/koa.cjs"
+      }
+    },
+    "./middleware/nextApp": {
+      "import": {
+        "types": "./dist/middleware/nextApp.d.ts",
+        "default": "./dist/middleware/nextApp.js"
+      },
+      "require": {
+        "types": "./dist/middleware/nextApp.d.cts",
+        "default": "./dist/middleware/nextApp.cjs"
+      }
+    },
+    "./middleware/nextPages": {
+      "import": {
+        "types": "./dist/middleware/nextPages.d.ts",
+        "default": "./dist/middleware/nextPages.js"
+      },
+      "require": {
+        "types": "./dist/middleware/nextPages.d.cts",
+        "default": "./dist/middleware/nextPages.cjs"
+      }
+    },
+    "./middleware/lambda": {
+      "import": {
+        "types": "./dist/middleware/lambda.d.ts",
+        "default": "./dist/middleware/lambda.js"
+      },
+      "require": {
+        "types": "./dist/middleware/lambda.d.cts",
+        "default": "./dist/middleware/lambda.cjs"
+      }
+    },
+    "./middleware/workers": {
+      "import": {
+        "types": "./dist/middleware/workers.d.ts",
+        "default": "./dist/middleware/workers.js"
+      },
+      "require": {
+        "types": "./dist/middleware/workers.d.cts",
+        "default": "./dist/middleware/workers.cjs"
+      }
+    },
+    "./streaming": {
+      "import": {
+        "types": "./dist/streaming.d.ts",
+        "default": "./dist/streaming.js"
+      },
+      "require": {
+        "types": "./dist/streaming.d.cts",
+        "default": "./dist/streaming.cjs"
+      }
+    },
+    "./backoff": {
+      "import": {
+        "types": "./dist/backoff.d.ts",
+        "default": "./dist/backoff.js"
+      },
+      "require": {
+        "types": "./dist/backoff.d.cts",
+        "default": "./dist/backoff.cjs"
+      }
+    },
+    "./sdkKey": {
+      "import": {
+        "types": "./dist/sdkKey.d.ts",
+        "default": "./dist/sdkKey.js"
+      },
+      "require": {
+        "types": "./dist/sdkKey.d.cts",
+        "default": "./dist/sdkKey.cjs"
+      }
+    },
+    "./exposure": {
+      "import": {
+        "types": "./dist/exposure.d.ts",
+        "default": "./dist/exposure.js"
+      },
+      "require": {
+        "types": "./dist/exposure.d.cts",
+        "default": "./dist/exposure.cjs"
+      }
+    },
+    "./snapshot": {
+      "import": {
+        "types": "./dist/snapshot.d.ts",
+        "default": "./dist/snapshot.js"
+      },
+      "require": {
+        "types": "./dist/snapshot.d.cts",
+        "default": "./dist/snapshot.cjs"
+      }
+    },
+    "./createUtils": {
+      "import": {
+        "types": "./dist/createUtils.d.ts",
+        "default": "./dist/createUtils.js"
+      },
+      "require": {
+        "types": "./dist/createUtils.d.cts",
+        "default": "./dist/createUtils.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avsbhq/avsb-js.git",
+    "directory": "packages/avsb-utils"
+  },
+  "homepage": "https://github.com/avsbhq/avsb-js/tree/main/packages/avsb-utils#readme",
+  "bugs": {
+    "url": "https://github.com/avsbhq/avsb-js/issues"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@avsbhq/core": "^1.6.0"
+  },
+  "peerDependencies": {
+    "zod": "^3.0.0 || ^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "zod": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^4.1.4",
+    "zod": "^3.23.0"
+  }
+}

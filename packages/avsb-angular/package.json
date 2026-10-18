@@ -1,0 +1,54 @@
+{
+  "name": "@avsbhq/angular",
+  "version": "1.1.2",
+  "description": "Angular SDK for A vs B feature flags and experiments: signals, RxJS observables, a structural directive, and pipes.",
+  "keywords": [
+    "angular",
+    "feature-flags",
+    "ab-testing",
+    "experiments",
+    "signals",
+    "rxjs",
+    "avsb"
+  ],
+  "license": "MIT",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avsbhq/avsb-js.git",
+    "directory": "packages/avsb-angular"
+  },
+  "homepage": "https://github.com/avsbhq/avsb-js/tree/main/packages/avsb-angular#readme",
+  "bugs": {
+    "url": "https://github.com/avsbhq/avsb-js/issues"
+  },
+  "peerDependencies": {
+    "@angular/core": ">=20.0.0",
+    "rxjs": ">=7.0.0"
+  },
+  "dependencies": {
+    "@avsbhq/core": "^1.6.0",
+    "@avsbhq/browser": "^1.5.0"
+  },
+  "scripts": {
+    "prebuild": "node ../avsb-core/scripts/writeSdkVersion.mjs",
+    "build": "ng-packagr -p ng-package.json -c tsconfig.lib.prod.json",
+    "build:dev": "ng-packagr -p ng-package.json -c tsconfig.lib.json",
+    "watch": "ng-packagr -p ng-package.json -c tsconfig.lib.json --watch",
+    "typecheck:spec": "tsc -p tsconfig.spec.json",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@angular/compiler": "^21.0.0",
+    "@angular/compiler-cli": "^21.0.0",
+    "@angular/core": "^21.0.0",
+    "happy-dom": "^12.0.0",
+    "ng-packagr": "^21.0.0",
+    "rxjs": "^7.8.0",
+    "vitest": "^4.1.4"
+  }
+}

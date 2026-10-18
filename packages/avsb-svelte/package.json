@@ -1,0 +1,110 @@
+{
+  "name": "@avsbhq/svelte",
+  "version": "1.1.3",
+  "description": "Svelte SDK for A vs B feature flags and experiments: stores, a runes accessor module, a provider, SvelteKit helpers, and test helpers.",
+  "keywords": [
+    "avsb",
+    "feature-flags",
+    "ab-testing",
+    "experiments",
+    "svelte",
+    "sveltekit",
+    "runes",
+    "sdk"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "svelte": "./dist/index.js",
+  "exports": {
+    ".": {
+      "svelte": "./dist/index.js",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./sveltekit": {
+      "import": {
+        "types": "./dist/sveltekit.d.ts",
+        "default": "./dist/sveltekit.js"
+      },
+      "require": {
+        "types": "./dist/sveltekit.d.cts",
+        "default": "./dist/sveltekit.cjs"
+      }
+    },
+    "./testing": {
+      "svelte": "./dist/testing.js",
+      "import": {
+        "types": "./dist/testing.d.ts",
+        "default": "./dist/testing.js"
+      },
+      "require": {
+        "types": "./dist/testing.d.cts",
+        "default": "./dist/testing.cjs"
+      }
+    },
+    "./runes": {
+      "svelte": "./src/runes/flags.svelte.ts",
+      "types": "./src/runes/flags.svelte.ts",
+      "default": "./src/runes/flags.svelte.ts"
+    },
+    "./AvsbProvider.svelte": "./src/AvsbProvider.svelte",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src",
+    "!src/**/*.test.ts",
+    "!src/**/*.test.tsx"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avsbhq/avsb-js.git",
+    "directory": "packages/avsb-svelte"
+  },
+  "homepage": "https://github.com/avsbhq/avsb-js/tree/main/packages/avsb-svelte#readme",
+  "bugs": {
+    "url": "https://github.com/avsbhq/avsb-js/issues"
+  },
+  "scripts": {
+    "prebuild": "node ../avsb-core/scripts/writeSdkVersion.mjs",
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@sveltejs/kit": ">=2.0.0",
+    "svelte": ">=5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@sveltejs/kit": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@avsbhq/browser": "^1.5.0",
+    "@avsbhq/core": "^1.6.0"
+  },
+  "devDependencies": {
+    "@avsbhq/test": "^1.2.0",
+    "@sveltejs/kit": "^2.0.0",
+    "happy-dom": "^14.0.0",
+    "svelte": "^5.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^4.1.4"
+  }
+}

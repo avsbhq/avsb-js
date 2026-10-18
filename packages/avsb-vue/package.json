@@ -1,0 +1,100 @@
+{
+  "name": "@avsbhq/vue",
+  "version": "1.1.3",
+  "description": "Vue SDK for A vs B feature flags and experiments: composables, a provider component, an optional Pinia store, and test helpers.",
+  "keywords": [
+    "avsb",
+    "feature-flags",
+    "ab-testing",
+    "experiments",
+    "vue",
+    "composables",
+    "pinia",
+    "sdk"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./pinia": {
+      "import": {
+        "types": "./dist/pinia.d.ts",
+        "default": "./dist/pinia.js"
+      },
+      "require": {
+        "types": "./dist/pinia.d.cts",
+        "default": "./dist/pinia.cjs"
+      }
+    },
+    "./testing": {
+      "import": {
+        "types": "./dist/testing.d.ts",
+        "default": "./dist/testing.js"
+      },
+      "require": {
+        "types": "./dist/testing.d.cts",
+        "default": "./dist/testing.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avsbhq/avsb-js.git",
+    "directory": "packages/avsb-vue"
+  },
+  "homepage": "https://github.com/avsbhq/avsb-js/tree/main/packages/avsb-vue#readme",
+  "bugs": {
+    "url": "https://github.com/avsbhq/avsb-js/issues"
+  },
+  "scripts": {
+    "prebuild": "node ../avsb-core/scripts/writeSdkVersion.mjs",
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "pinia": ">=2.1.0",
+    "vue": ">=3.4.0"
+  },
+  "peerDependenciesMeta": {
+    "pinia": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@avsbhq/browser": "^1.5.0",
+    "@avsbhq/core": "^1.6.0"
+  },
+  "devDependencies": {
+    "@avsbhq/test": "^1.2.0",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "@vue/test-utils": "^2.4.0",
+    "happy-dom": "^14.0.0",
+    "pinia": "^2.1.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^4.1.4",
+    "vue": "^3.4.0"
+  }
+}
